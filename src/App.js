@@ -1,17 +1,26 @@
-import Navbar from "components/Traditional-Style/Navbar/Navbar";
-import Todos from "components/Traditional-Style/Todos/Todos";
+import ModernStyle from "components/Modern-Style";
+import TradionalStyle from "components/Traditional-Style";
+import { Fragment } from "react";
 import { Provider } from "react-redux";
-import store from "store/store";
+import modernStore from "store/Modern-Style/store";
+import tradionalStore from "store/Tradional-Style/store";
 import "./App.css";
 
 function App() {
 	return (
-		<Provider store={store}>
-			<div className="App">
-				<Navbar />
-				<Todos />
-			</div>
-		</Provider>
+		<Fragment>
+			<Provider store={tradionalStore}>
+				<div className="App">
+					<TradionalStyle />
+				</div>
+			</Provider>
+			<br />
+			<Provider store={modernStore}>
+				<div className="App">
+					<ModernStyle />
+				</div>
+			</Provider>
+		</Fragment>
 	);
 }
 

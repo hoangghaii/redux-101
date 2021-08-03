@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import { connect } from "react-redux";
 
 Navbar.propTypes = {
@@ -11,7 +11,7 @@ function Navbar(props) {
 
 	return (
 		<div className="navbar">
-			<h1>My Redux Todos app</h1>
+			<h1>My Redux Todos app (Tradional Style)</h1>
 			<ul>
 				<li>Home</li>
 				<li>About</li>

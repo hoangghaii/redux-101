@@ -1,25 +1,16 @@
 import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { addTodo } from "store/Tradional-Style/actions/todoAction";
 import { v4 as uuidv4 } from "uuid";
 
-TodoForm.propTypes = {
-	addTodo: PropTypes.func.isRequired,
-};
+TodoForm.propTypes = {};
 
 function TodoForm(props) {
-	const { addTodo } = props;
+	const {} = props;
 
 	const [title, setTitle] = useState("");
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
-		addTodo({
-			id: uuidv4(),
-			title: title,
-			completed: false,
-		});
 	};
 
 	return (
@@ -36,6 +27,4 @@ function TodoForm(props) {
 	);
 }
 
-const mapStateToProps = (state) => ({});
-
-export default connect(mapStateToProps, { addTodo })(TodoForm);
+export default TodoForm;

@@ -7,8 +7,8 @@ const {
 
 exports.getAll = async (req, res) => {
 	try {
-		const { limit } = req.query;
-		const todos = await getAllTodo(limit);
+		const { _limit } = req.query;
+		const todos = await getAllTodo(_limit);
 
 		return res
 			.status(200)

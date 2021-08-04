@@ -9,20 +9,20 @@ const initialState = {
 
 export const getTodos = createAsyncThunk("todos/getTodos", async () => {
 	const response = await axios.get(`${baseUrl}?_limit=5`);
-	return response.data;
+	return response.data.todos;
 });
 
 export const markComplete = createAsyncThunk(
 	"todos/markComplete",
 	async (id) => {
-		const response = await axios.put(`${baseUrl}/${id}`);
-		return response.data.id;
+		await axios.put(`${baseUrl}/${id}`);
+		return id;
 	}
 );
 
 export const addTodo = createAsyncThunk("todos/addTodo", async (newTodo) => {
 	const response = await axios.post(baseUrl, newTodo);
-	return response.data;
+	return response.data.todo;
 });
 
 export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {

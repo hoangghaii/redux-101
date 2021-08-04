@@ -1,19 +1,15 @@
-import TodoForm from "components/Traditional-Style/TodoForm/TodoForm";
-import PropTypes from "prop-types";
-import React, { useEffect, useState } from "react";
+import TodoForm from "components/Modern-Style/TodoForm/TodoForm";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+	deleteTodo,
 	getTodos,
 	markComplete,
-	addTodo,
-	deleteTodo,
 } from "store/Modern-Style/slices/todoSlice";
 
 Todos.propTypes = {};
 
 function Todos(props) {
-	const {} = props;
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {

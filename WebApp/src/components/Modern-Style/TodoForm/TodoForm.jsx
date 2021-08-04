@@ -1,16 +1,18 @@
-import PropTypes from "prop-types";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "store/Modern-Style/slices/todoSlice";
 import { v4 as uuidv4 } from "uuid";
 
 TodoForm.propTypes = {};
 
 function TodoForm(props) {
-	const {} = props;
-
 	const [title, setTitle] = useState("");
+
+	const dispatch = useDispatch();
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
+		dispatch(addTodo({ id: uuidv4(), title: title, completed: false }));
 	};
 
 	return (

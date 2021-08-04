@@ -1,10 +1,10 @@
-import PropTypes from "prop-types";
 import React from "react";
+import { useSelector } from "react-redux";
 
 Navbar.propTypes = {};
 
 function Navbar(props) {
-	const {} = props;
+	const todos = useSelector((state) => state.todos.todos);
 
 	return (
 		<div className="navbar">
@@ -12,7 +12,7 @@ function Navbar(props) {
 			<ul>
 				<li>Home</li>
 				<li>About</li>
-				<li>Total todos: </li>
+				<li>Total todos: {todos.length}</li>
 			</ul>
 		</div>
 	);

@@ -1,0 +1,38 @@
+{
+  "name": "server-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "resetdb": "node_modules/.bin/sequelize db:migrate:undo:all",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "initdata": "node_modules/.bin/sequelize db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "__hhaai_",
+  "license": "No",
+  "private": true,
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest",
+    "api",
+    "sequelize",
+    "mysql"
+  ],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "lodash": "^4.17.21",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  }
+}

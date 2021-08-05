@@ -7,7 +7,7 @@ exports.getAllTodo = async (limit) => {
 		const todos = await Todos.findAll(limit && { limit: parseInt(limit) });
 		return todos;
 	} catch (error) {
-		return error;
+		throw error;
 	}
 };
 
@@ -20,7 +20,7 @@ exports.createTodo = async (title) => {
 		});
 		return todo;
 	} catch (error) {
-		return error;
+		throw error;
 	}
 };
 
@@ -41,7 +41,7 @@ exports.updateTodo = async (id) => {
 			return { status: 200, success: true, message: "Update Todo Successfully!" };
 		}
 	} catch (error) {
-		return error;
+		throw error;
 	}
 };
 
@@ -59,6 +59,6 @@ exports.deleteTodo = async (id) => {
 			return { status: 200, success: true, message: "Deleted Successfully!" };
 		}
 	} catch (error) {
-		return error;
+		throw error;
 	}
 };
